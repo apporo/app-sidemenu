@@ -1,0 +1,10 @@
+{
+  "apps": [{
+    "name": "app-sidemenu-bdd",
+    "script": "test/app",
+    "watch": true,
+    "env": {
+      "NODE_DEVEBOT_SANDBOX": "test"
+    }
+  }]
+}
