@@ -1,3 +1,5 @@
 $(document).ready(function(){
-	$('#menu').multilevelpushmenu();
+  $('#menu').multilevelpushmenu({
+    menu: menuData
+  });
 });
