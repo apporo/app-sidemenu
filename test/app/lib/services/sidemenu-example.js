@@ -29,6 +29,7 @@ var Service = function(params) {
   });
 
   params.webinjectService.inject([
+    params.webweaverService.getDefaultRedirectLayer(),
     {
       name: 'app-sidemenu-example-public',
       path: contextPath,
