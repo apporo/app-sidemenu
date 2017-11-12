@@ -321,12 +321,12 @@ module.exports = {
             }
           ]
         },{
-          name: 'link222',
-          link: '#',
+          name: 'link 3',
+          link: '/link3',
           items: []
         },{
-          name: 'link222',
-          link: '#',
+          name: 'link 4',
+          link: '/link4',
           items: []
         }
       ]
