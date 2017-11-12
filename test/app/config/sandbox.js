@@ -282,35 +282,27 @@ module.exports = {
               items: [
                 {
                   name: 'link1A1',
-                  link: '#',
-                  items: [
-                  ]
+                  link: '#'
                 },{
                   name: 'link1B1',
-                  link: '#',
-                  items: []
+                  link: '#'
                 },{
                   name: 'link1C1',
-                  link: '#',
-                  items: []
+                  link: '#'
                 },{
                   name: 'link1D1',
-                  link: '#',
-                  items: []
+                  link: '#'
                 }
               ]
             },{
               name: 'link1B',
-              link: '#',
-              items: []
+              link: '#'
             },{
               name: 'link1C',
-              link: '#',
-              items: []
+              link: '#'
             },{
               name: 'link1D',
-              link: '#',
-              items: []
+              link: '#'
             }
           ]
         },{
