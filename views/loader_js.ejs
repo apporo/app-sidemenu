@@ -1,0 +1,17 @@
+var $myQuery = $.noConflict(true);
+$myQuery(function($) {
+  $(document).ready(function(){
+    <% if (menuType == 'pushmenu') { %>
+    $('#menu').multilevelpushmenu({
+      menu: menuData
+    });
+    <% } %>
+    <% if (menuType == 'flypanels') { %>
+    $('.flypanels-container').flyPanels({
+     treeMenu: {
+          init: true
+        }
+    });
+    <% } %>
+  });
+});
