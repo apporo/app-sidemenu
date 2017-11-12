@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: {
     appSidemenu: {
-      menuType: 'pushmenu', // pushmenu, flypanels
+      menuType: 'flypanels', // pushmenu, flypanels
       contextPath: contextPath,
       interceptUrls: [contextPath + '/(.*).html'],
       menuData: [
@@ -269,6 +269,65 @@ module.exports = {
               link: '#'
             }
           ]
+        }
+      ],
+      menuDataFlypanels: [
+        {
+          name: 'link1',
+          link: '#',
+          items: [
+            {
+              name: 'link1A',
+              link: '#',
+              items: [
+                {
+                  name: 'link1A1',
+                  link: '#'
+                },{
+                  name: 'link1B1',
+                  link: '#'
+                },{
+                  name: 'link1C1',
+                  link: '#'
+                },{
+                  name: 'link1D1',
+                  link: '#'
+                }
+              ]
+            },{
+              name: 'link1B',
+              link: '#'
+            },{
+              name: 'link1C',
+              link: '#'
+            },{
+              name: 'link1D',
+              link: '#'
+            }
+          ]
+        },{
+          name: 'link2',
+          link: '#',
+          items: [
+            {
+              name: 'link2A',
+              link: '#',
+              items: [
+              ]
+            },{
+              name: 'link2B',
+              link: '#',
+              items: []
+            }
+          ]
+        },{
+          name: 'link 3',
+          link: '/link3',
+          items: []
+        },{
+          name: 'link 4',
+          link: '/link4',
+          items: []
         }
       ]
     },
