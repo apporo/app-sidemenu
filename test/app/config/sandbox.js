@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: {
     appSidemenu: {
-      menuType: 'flypanels', // pushmenu, flypanels
+      menuType: 'pushmenu', // pushmenu, flypanels
       contextPath: contextPath,
       interceptUrls: [contextPath + '/(.*).html'],
       menuData: [
@@ -19,7 +19,7 @@ module.exports = {
               name: 'Devices',
               id: 'itemID',
               icon: 'fa fa-laptop',
-              link: '#',
+              link: 'Devices',
               items: [
                 {
                   title: 'Devices',
@@ -28,7 +28,7 @@ module.exports = {
                     {
                       name: 'Mobile Phones',
                       icon: 'fa fa-phone',
-                      link: '#',
+                      link: 'Mobile Phones',
                       items: [
                         {
                           title: 'Mobile Phones',
@@ -37,19 +37,19 @@ module.exports = {
                           items: [
                             {
                               name: 'Super Smart Phone',
-                              link: '#'
+                              link: 'Super Smart Phone'
                             },
                             {
                               name: 'Thin Magic Mobile',
-                              link: '#'
+                              link: 'Thin Magic Mobile'
                             },
                             {
                               name: 'Performance Crusher',
-                              link: '#'
+                              link: 'Performance Crusher'
                             },
                             {
                               name: 'Futuristic Experience',
-                              link: '#'
+                              link: 'Futuristic Experience'
                             }
                           ]
                         }
@@ -269,65 +269,6 @@ module.exports = {
               link: '#'
             }
           ]
-        }
-      ],
-      menuDataFlypanels: [
-        {
-          name: 'link1',
-          link: '#',
-          items: [
-            {
-              name: 'link1A',
-              link: '#',
-              items: [
-                {
-                  name: 'link1A1',
-                  link: '#'
-                },{
-                  name: 'link1B1',
-                  link: '#'
-                },{
-                  name: 'link1C1',
-                  link: '#'
-                },{
-                  name: 'link1D1',
-                  link: '#'
-                }
-              ]
-            },{
-              name: 'link1B',
-              link: '#'
-            },{
-              name: 'link1C',
-              link: '#'
-            },{
-              name: 'link1D',
-              link: '#'
-            }
-          ]
-        },{
-          name: 'link2',
-          link: '#',
-          items: [
-            {
-              name: 'link2A',
-              link: '#',
-              items: [
-              ]
-            },{
-              name: 'link2B',
-              link: '#',
-              items: []
-            }
-          ]
-        },{
-          name: 'link 3',
-          link: '/link3',
-          items: []
-        },{
-          name: 'link 4',
-          link: '/link4',
-          items: []
         }
       ]
     },
