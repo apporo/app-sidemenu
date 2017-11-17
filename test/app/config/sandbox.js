@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: {
     appSidemenu: {
-      menuType: 'pushmenu', // pushmenu, flypanels
+      menuType: 'flypanels', // pushmenu, flypanels
       contextPath: contextPath,
       interceptUrls: [contextPath + '/(.*).html'],
       menuData: [
@@ -19,37 +19,37 @@ module.exports = {
               name: 'Devices',
               id: 'itemID',
               icon: 'fa fa-laptop',
-              link: 'Devices',
+              link: '#',
               items: [
                 {
                   title: 'Devices',
                   icon: 'fa fa-laptop',
+                  link: '#',
                   items: [
                     {
                       name: 'Mobile Phones',
                       icon: 'fa fa-phone',
-                      link: 'Mobile Phones',
+                      link: '#',
                       items: [
                         {
                           title: 'Mobile Phones',
                           icon: 'fa fa-phone',
-                          link: '#',
                           items: [
                             {
                               name: 'Super Smart Phone',
-                              link: 'Super Smart Phone'
+                              link: '#devices/mobile-phones/super-smart-phone'
                             },
                             {
                               name: 'Thin Magic Mobile',
-                              link: 'Thin Magic Mobile'
+                              link: '#devices/mobile-phones/thin-magic-mobile'
                             },
                             {
                               name: 'Performance Crusher',
-                              link: 'Performance Crusher'
+                              link: '#devices/mobile-phones/performance-crusher'
                             },
                             {
                               name: 'Futuristic Experience',
-                              link: 'Futuristic Experience'
+                              link: '#devices/mobile-phones/futuristic-experience'
                             }
                           ]
                         }
