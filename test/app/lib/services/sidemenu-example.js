@@ -6,11 +6,10 @@ var path = require('path');
 var Devebot = require('devebot');
 var Promise = Devebot.require('bluebird');
 var lodash = Devebot.require('lodash');
-var debug = Devebot.require('debug');
-var debuglog = debug('appSidemenu:example');
+var debugx = Devebot.require('pinbug')('app-sidemenu:example');
 
 var Service = function(params) {
-  debuglog.isEnabled && debuglog(' + constructor begin ...');
+  debugx.enabled && debugx(' + constructor begin ...');
 
   params = params || {};
 
@@ -42,20 +41,9 @@ var Service = function(params) {
     }
   ]);
 
-  debuglog.isEnabled && debuglog(' - constructor end!');
+  debugx.enabled && debugx(' - constructor end!');
 };
 
-Service.argumentSchema = {
-  "id": "sidemenuExample",
-  "type": "object",
-  "properties": {
-    "webinjectService": {
-      "type": "object"
-    },
-    "webweaverService": {
-      "type": "object"
-    }
-  }
-};
+Service.referenceList = ['webinjectService', 'webweaverService'];
 
 module.exports = Service;

@@ -2,7 +2,7 @@
 
 var Devebot = require('devebot');
 var lodash = Devebot.require('lodash');
-var debugx = Devebot.require('debug')('appSidemenu:trailers:flypanels');
+var debugx = Devebot.require('pinbug')('app-sidemenu:trailers:flypanels');
 var util = require('util');
 
 function renderMenuItem(item, array, padding) {

@@ -1,22 +1,32 @@
 'use strict';
 
-var path = require('path');
 var Devebot = require('devebot');
 var Promise = Devebot.require('bluebird');
+var chores = Devebot.require('chores');
 var loader = Devebot.require('loader');
 var lodash = Devebot.require('lodash');
-var debugx = Devebot.require('debug')('appSidemenu:service');
+var path = require('path');
 
 var Service = function(params) {
-  debugx.enabled && debugx(', constructor begin ...');
-
   params = params || {};
 
   var self = this;
-  var logger = params.loggingFactory.getLogger();
+  let LX = params.loggingFactory.getLogger();
+  let LT = params.loggingFactory.getTracer();
+  let packageName = params.packageName || 'app-sidemenu';
+  let blockRef = chores.getBlockRef(__filename, packageName);
+
+  LX.has('silly') && LX.log('silly', LT.toMessage({
+    tags: [ blockRef, 'constructor-begin' ],
+    text: ' + constructor begin ...'
+  }));
+
+  let webinjectService = params['webinjectService'];
+  let webweaverService = params['webweaverService'];
+
   var pluginCfg = params.sandboxConfig;
   var contextPath = pluginCfg.contextPath || '/sidemenu';
-  var express = params.webweaverService.express;
+  var express = webweaverService.express;
 
   var interceptUrls = pluginCfg.interceptUrls || [contextPath + '/(.*).html'];
   var menuData = pluginCfg.menuData || [];
@@ -33,7 +43,7 @@ var Service = function(params) {
     menuData: menuData
   });
 
-  params.webinjectService.enqueue(menuTemplate[menuType]);
+  webinjectService.enqueue(menuTemplate[menuType]);
 
   self.getStaticFilesLayer = function() {
     return {
@@ -66,26 +76,18 @@ var Service = function(params) {
   }
 
   if (pluginCfg.autowired !== false) {
-    params.webinjectService.inject([
+    webinjectService.inject([
       self.getJavascriptLayer(),
       self.getStaticFilesLayer()
     ], pluginCfg.priority);
   }
 
-  debugx.enabled && debugx(' - constructor end!');
+  LX.has('silly') && LX.log('silly', LT.toMessage({
+    tags: [ blockRef, 'constructor-end' ],
+    text: ' - constructor end!'
+  }));
 };
 
-Service.argumentSchema = {
-  "id": "sidemenuService",
-  "type": "object",
-  "properties": {
-    "webinjectService": {
-      "type": "object"
-    },
-    "webweaverService": {
-      "type": "object"
-    }
-  }
-};
+Service.referenceList = [ 'webinjectService', 'webweaverService' ];
 
 module.exports = Service;

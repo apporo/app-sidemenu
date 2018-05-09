@@ -6,9 +6,9 @@ module.exports = {
   },
   plugins: {
     appSidemenu: {
-      menuType: 'flypanels', // pushmenu, flypanels
+      menuType: 'pushmenu', // pushmenu, flypanels
       contextPath: contextPath,
-      interceptUrls: [contextPath + '/(.*).html'],
+      interceptUrls: [contextPath + '/(.*)(1|2).html'],
       menuData: [
         {
           title: 'All Categories',
